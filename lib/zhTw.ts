@@ -44,7 +44,7 @@ export const zhTW: LocalizationResource = {
   footerPageLink__privacy: '隱私',
   footerPageLink__terms: '條款',
   formButtonPrimary: '繼續',
-  formButtonPrimary__verify: 'Verify',
+  // formButtonPrimary__verify: 'Verify',
   formFieldAction__forgotPassword: '忘記密碼？',
   formFieldError__matchingPasswords: '密碼匹配。',
   formFieldError__notMatchingPasswords: '密碼不匹配。',
@@ -52,7 +52,7 @@ export const zhTW: LocalizationResource = {
   formFieldHintText__optional: '選填',
   formFieldHintText__slug: 'A slug is a human-readable ID that must be unique. It’s often used in URLs.',
   formFieldInputPlaceholder__backupCode: '',
-  formFieldInputPlaceholder__confirmDeletionUserAccount: 'Delete account',
+  // formFieldInputPlaceholder__confirmDeletionUserAccount: 'Delete account',
   formFieldInputPlaceholder__emailAddress: '',
   formFieldInputPlaceholder__emailAddress_username: '',
   formFieldInputPlaceholder__emailAddresses: '輸入或黏貼一個或多個電子郵件地址，用空格或逗號分隔',
@@ -119,7 +119,7 @@ export const zhTW: LocalizationResource = {
     invitePage: {
       detailsTitle__inviteFailed: '邀請無法發送。修覆以下問題然後重試：',
       formButtonPrimary__continue: '發送邀請',
-      selectDropdown__role: 'Select role',
+      // selectDropdown__role: 'Select role',
       subtitle: '邀請新成員加入此組織',
       successMessage: '邀請成功發送',
       title: '邀請成員',
@@ -165,12 +165,12 @@ export const zhTW: LocalizationResource = {
         headerTitle__requests: 'Requests',
       },
     },
-    navbar: {
-      description: 'Manage your organization.',
-      general: 'General',
-      members: 'Members',
-      title: 'Organization',
-    },
+    // navbar: {
+    //   description: 'Manage your organization.',
+    //   general: 'General',
+    //   members: 'Members',
+    //   title: 'Organization',
+    // },
     profilePage: {
       dangerSection: {
         deleteOrganization: {
@@ -190,9 +190,9 @@ export const zhTW: LocalizationResource = {
         title: '危險',
       },
       domainSection: {
-        menuAction__manage: 'Manage',
-        menuAction__remove: 'Delete',
-        menuAction__verify: 'Verify',
+        // menuAction__manage: 'Manage',
+        // menuAction__remove: 'Delete',
+        // menuAction__verify: 'Verify',
         primaryButton: 'Add domain',
         subtitle:
           'Allow users to join the organization automatically or request to join based on a verified email domain.',
@@ -208,13 +208,13 @@ export const zhTW: LocalizationResource = {
       title: 'Remove domain',
     },
     start: {
-      headerTitle__general: 'General',
+      // headerTitle__general: 'General',
       headerTitle__members: '成員',
-      profileSection: {
-        primaryButton: '',
-        title: 'Organization Profile',
-        uploadAction__title: 'Logo',
-      },
+      // profileSection: {
+      //   primaryButton: '',
+      //   title: 'Organization Profile',
+      //   uploadAction__title: 'Logo',
+      // },
     },
     verifiedDomainPage: {
       dangerTab: {
@@ -242,7 +242,7 @@ export const zhTW: LocalizationResource = {
         headerTitle__enrollment: 'Enrollment options',
       },
       subtitle: 'The domain {{domain}} is now verified. Continue by selecting enrollment mode.',
-      title: 'Update {{domain}}',
+      // title: 'Update {{domain}}',
     },
     verifyDomainPage: {
       formSubtitle: 'Enter the verification code sent to your email address',
@@ -267,15 +267,15 @@ export const zhTW: LocalizationResource = {
   paginationRowText__displaying: '顯示',
   paginationRowText__of: '的',
   signIn: {
-    accountSwitcher: {
-      action__addAccount: 'Add account',
-      action__signOutAll: 'Sign out of all accounts',
-      subtitle: 'Select the account with which you wish to continue.',
-      title: 'Choose an account',
-    },
+    // accountSwitcher: {
+    //   action__addAccount: 'Add account',
+    //   action__signOutAll: 'Sign out of all accounts',
+    //   subtitle: 'Select the account with which you wish to continue.',
+    //   title: 'Choose an account',
+    // },
     alternativeMethods: {
       actionLink: '獲取幫助',
-      actionText: 'Don’t have any of these?',
+      // actionText: 'Don’t have any of these?',
       blockButton__backupCode: '使用備用代碼',
       blockButton__emailCode: '電子郵件驗證碼到 {{identifier}}',
       blockButton__emailLink: '電子郵件連結到 {{identifier}}',
@@ -287,7 +287,7 @@ export const zhTW: LocalizationResource = {
         content: '如果您在登入帳戶時遇到困難，請給我們發送電子郵件，我們將盡快讓您恢覆訪問。',
         title: '獲取幫助',
       },
-      subtitle: 'Facing issues? You can use any of these methods to sign in.',
+      // subtitle: 'Facing issues? You can use any of these methods to sign in.',
       title: '使用其他方法',
     },
     backupCodeMfa: {
@@ -335,9 +335,9 @@ export const zhTW: LocalizationResource = {
       formTitle: '重設密碼代碼',
       resendButton: '重新發送代碼',
       subtitle: 'to reset your password',
-      subtitle_email: 'First, enter the code sent to your email ID',
-      subtitle_phone: 'First, enter the code sent to your phone',
-      title: 'Reset password',
+      // subtitle_email: 'First, enter the code sent to your email ID',
+      // subtitle_phone: 'First, enter the code sent to your phone',
+      // title: 'Reset password',
     },
     forgotPasswordAlternativeMethods: {
       blockButton__resetPassword: '重設密碼',
@@ -576,20 +576,20 @@ export const zhTW: LocalizationResource = {
         title: '移除電子郵件地址',
       },
       title: '添加電子郵件地址',
-      verifyTitle: 'Verify email address',
+      // verifyTitle: 'Verify email address',
     },
-    formButtonPrimary__add: 'Add',
+    // formButtonPrimary__add: 'Add',
     formButtonPrimary__continue: '繼續',
     formButtonPrimary__finish: '完成',
-    formButtonPrimary__remove: 'Remove',
-    formButtonPrimary__save: 'Save',
+    // formButtonPrimary__remove: 'Remove',
+    // formButtonPrimary__save: 'Save',
     formButtonReset: '取消',
     mfaPage: {
       formHint: '選擇一個添加的方法。',
       title: '添加兩步驗證',
     },
     mfaPhoneCodePage: {
-      backButton: 'Use existing number',
+      // backButton: 'Use existing number',
       primaryButton__addPhoneNumber: '添加電話號碼',
       removeResource: {
         messageLine1: '{{identifier}} 將不再在登錄時接收驗證代碼。',
@@ -599,11 +599,11 @@ export const zhTW: LocalizationResource = {
       },
       subtitle__availablePhoneNumbers: '選擇一個電話號碼來註冊簡訊驗證碼兩步驗證。',
       subtitle__unavailablePhoneNumbers: '沒有可用的電話號碼來註冊簡訊驗證碼兩步驗證。',
-      successMessage1:
-        'When signing in, you will need to enter a verification code sent to this phone number as an additional step.',
-      successMessage2:
-        'Save these backup codes and store them somewhere safe. If you lose access to your authentication device, you can use backup codes to sign in.',
-      successTitle: 'SMS code verification enabled',
+      // successMessage1:
+      //   'When signing in, you will need to enter a verification code sent to this phone number as an additional step.',
+      // successMessage2:
+      //   'Save these backup codes and store them somewhere safe. If you lose access to your authentication device, you can use backup codes to sign in.',
+      // successTitle: 'SMS code verification enabled',
       title: '添加簡訊驗證碼驗證',
     },
     mfaTOTPPage: {
@@ -627,21 +627,21 @@ export const zhTW: LocalizationResource = {
       verifyTitle: '驗證代碼',
     },
     mobileButton__menu: '菜單',
-    navbar: {
-      account: 'Profile',
-      description: 'Manage your account info.',
-      security: 'Security',
-      title: 'Account',
-    },
+    // navbar: {
+    //   account: 'Profile',
+    //   description: 'Manage your account info.',
+    //   security: 'Security',
+    //   title: 'Account',
+    // },
     passwordPage: {
-      checkboxInfoText__signOutOfOtherSessions:
-        'It is recommended to sign out of all other devices which may have used your old password.',
+      // checkboxInfoText__signOutOfOtherSessions:
+      //   'It is recommended to sign out of all other devices which may have used your old password.',
       readonly: 'Your password can currently not be edited because you can sign in only via the enterprise connection.',
-      successMessage__set: '您的密碼已設置。',
-      successMessage__signOutOfOtherSessions: '所有其他設備已退出。',
-      successMessage__update: '您的密碼已更新。',
-      title__set: '設置密碼',
-      title__update: '更改密碼',
+      // successMessage__set: '您的密碼已設置。',
+      // successMessage__signOutOfOtherSessions: '所有其他設備已退出。',
+      // successMessage__update: '您的密碼已更新。',
+      // title__set: '設置密碼',
+      // title__update: '更改密碼',
     },
     phoneNumberPage: {
       infoText: '一條包含驗證連結的簡訊將會發送到這個電話號碼。',
@@ -653,8 +653,8 @@ export const zhTW: LocalizationResource = {
       },
       successMessage: '{{identifier}} 已被添加到您的帳戶。',
       title: '添加電話號碼',
-      verifySubtitle: 'Enter the verification code sent to {{identifier}}',
-      verifyTitle: 'Verify phone number',
+      // verifySubtitle: 'Enter the verification code sent to {{identifier}}',
+      // verifyTitle: 'Verify phone number',
     },
     profilePage: {
       fileDropAreaHint: '上傳小於10MB的JPG, PNG, GIF, 或WEBP格式的圖片',
@@ -716,7 +716,7 @@ export const zhTW: LocalizationResource = {
       },
       passwordSection: {
         primaryButton__setPassword: '設置密碼',
-        primaryButton__updatePassword: '更改密碼',
+        // primaryButton__updatePassword: '更改密碼',
         title: '密碼',
       },
       phoneNumbersSection: {
@@ -728,12 +728,12 @@ export const zhTW: LocalizationResource = {
         title: '電話號碼',
       },
       profileSection: {
-        primaryButton: '',
+        // primaryButton: '',
         title: '個人資料',
       },
       usernameSection: {
         primaryButton__setUsername: '設置使用者名稱',
-        primaryButton__updateUsername: '更改使用者名稱',
+        // primaryButton__updateUsername: '更改使用者名稱',
         title: '使用者名稱',
       },
       web3WalletsSection: {
@@ -744,8 +744,9 @@ export const zhTW: LocalizationResource = {
     },
     usernamePage: {
       successMessage: '您的使用者名稱已更新。',
-      title__set: '更新使用者名稱',
-      title__update: '更新使用者名稱',
+      // title__set: '更新使用者名稱',
+      // title__update: '更新使用者名稱',
+      title: '更新使用者名稱',
     },
     web3WalletPage: {
       removeResource: {
