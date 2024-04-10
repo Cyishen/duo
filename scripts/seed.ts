@@ -13,12 +13,136 @@ const main = async () => {
 
     await db.delete(schema.courses);
     await db.delete(schema.userProgress);
+    await db.delete(schema.units);
+    await db.delete(schema.lessons);
+    await db.delete(schema.challenges);
+    await db.delete(schema.challengeOptions);
+    await db.delete(schema.challengeProgress);
+    await db.delete(schema.userSubscription);
 
     await db.insert(schema.courses).values([
       { id: 1, title: "Spanish", imageSrc: "/es.svg", },
       { id: 2, title: "Italian", imageSrc: "/it.svg", },
       { id: 3, title: "French", imageSrc: "/fr.svg", },
       { id: 4, title: "Croatian", imageSrc: "/hr.svg", },
+    ]);
+
+    await db.insert(schema.units).values([
+      {
+        id: 1, // Spanish
+        courseId: 1,
+        title: "Unit 1",
+        description: "Learn the basics of Spanish",
+        order: 1,
+      }
+    ]);
+    // todo? Unit 1 have 2 lessons
+    await db.insert(schema.lessons).values([
+      {
+        id: 1,
+        unitId: 1, // Unit 1 
+        order: 1,
+        title: "Nouns",
+      },
+      {
+        id: 2,
+        unitId: 1, // Unit 1 
+        order: 2,
+        title: "Verbs",
+      },
+    ]);
+    // todo? > first lesson have 3 challenges
+    await db.insert(schema.challenges).values([
+      {
+        id: 1,
+        lessonId: 1, // first lesson : Nouns
+        type: "SELECT",
+        order: 1,
+        question: 'Which one of these is the "the man"?',
+      },
+      {
+        id: 2,
+        lessonId: 1, // Nouns
+        type: "ASSIST",
+        order: 2,
+        question: '"the man"',
+      },
+      {
+        id: 3,
+        lessonId: 1, // Nouns
+        type: "SELECT",
+        order: 3,
+        question: 'Which one of these is the "the robot"?',
+      },
+    ]);
+    // todo? > first challenge with 3 options
+    await db.insert(schema.challengeOptions).values([
+      {
+        challengeId: 1, // Which one of these is "the man"?
+        imageSrc: "/man.svg",
+        correct: true,
+        text: "el hombre",
+        audioSrc: "/es_man.mp3",
+      },
+      {
+        challengeId: 1,
+        imageSrc: "/woman.svg",
+        correct: false,
+        text: "la mujer",
+        audioSrc: "/es_woman.mp3",
+      },
+      {
+        challengeId: 1,
+        imageSrc: "/robot.svg",
+        correct: false,
+        text: "el robot",
+        audioSrc: "/es_robot.mp3",
+      },
+    ]);
+    // todo? > second challenge with 3 options
+    await db.insert(schema.challengeOptions).values([
+      {
+        challengeId: 2, // "the man"?
+        correct: true,
+        text: "el hombre",
+        audioSrc: "/es_man.mp3",
+      },
+      {
+        challengeId: 2,
+        correct: false,
+        text: "la mujer",
+        audioSrc: "/es_woman.mp3",
+      },
+      {
+        challengeId: 2,
+        correct: false,
+        text: "el robot",
+        audioSrc: "/es_robot.mp3",
+      },
+    ]);
+    // todo? > third challenge with 3 options
+    await db.insert(schema.challengeOptions).values([
+      {
+        challengeId: 3, // Which one of these is the "the robot"?
+        imageSrc: "/man.svg",
+        correct: false,
+        text: "el hombre",
+        audioSrc: "/es_man.mp3",
+      },
+      {
+        challengeId: 3,
+        imageSrc: "/woman.svg",
+        correct: false,
+        text: "la mujer",
+        audioSrc: "/es_woman.mp3",
+      },
+      {
+        challengeId: 3,
+        imageSrc: "/robot.svg",
+        correct: true,
+        text: "el robot",
+        audioSrc: "/es_robot.mp3",
+      },
     ]);
 
     console.log("Seeding finished");
