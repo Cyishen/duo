@@ -50,6 +50,18 @@ const main = async () => {
         order: 2,
         title: "Verbs",
       },
+      {
+        id: 3,
+        unitId: 1, // Unit 1 
+        order: 3,
+        title: "Verbs",
+      },
+      {
+        id: 4,
+        unitId: 1, // Unit 1 
+        order: 4,
+        title: "Verbs",
+      },
     ]);
     // todo? > first lesson have 3 challenges
     await db.insert(schema.challenges).values([
