@@ -34,9 +34,30 @@ const main = async () => {
         title: "Unit 1",
         description: "Learn the basics of Spanish",
         order: 1,
-      }
+      },
+      {
+        id: 2, // italian
+        courseId: 2,
+        title: "Unit 2",
+        description: "Learn the basics of italian",
+        order: 2,
+      },
+      {
+        id: 3, // French
+        courseId: 3,
+        title: "Unit 3",
+        description: "Learn the basics of French",
+        order: 3,
+      },
+      {
+        id: 4, // Croatian
+        courseId: 4,
+        title: "Unit 4",
+        description: "Learn the basics of Croatian",
+        order: 4,
+      },
     ]);
-    // todo? Unit 1 have 2 lessons
+    // todo Unit x have xx lessons
     await db.insert(schema.lessons).values([
       {
         id: 1,
@@ -46,48 +67,74 @@ const main = async () => {
       },
       {
         id: 2,
-        unitId: 1, // Unit 1 
+        unitId: 1, 
         order: 2,
         title: "Verbs",
       },
       {
         id: 3,
-        unitId: 1, // Unit 1 
+        unitId: 1, 
         order: 3,
         title: "Verbs",
       },
       {
         id: 4,
-        unitId: 1, // Unit 1 
+        unitId: 1, 
         order: 4,
         title: "Verbs",
+      },
+      {
+        id: 5,
+        unitId: 1, 
+        order: 5,
+        title: "Verbs",
+      },
+      {
+        id: 6,
+        unitId: 2, // Unit 2
+        order: 1,
+        title: "Nouns",
       },
     ]);
     // todo? > first lesson have 3 challenges
     await db.insert(schema.challenges).values([
       {
         id: 1,
-        lessonId: 1, // first lesson : Nouns
+        lessonId: 1, // lesson 1
         type: "SELECT",
         order: 1,
-        question: 'Which one of these is the "the man"?',
+        question: 'Which one of these is the "the man"? (lesson 1)',
       },
       {
         id: 2,
-        lessonId: 1, // Nouns
+        lessonId: 1,
         type: "ASSIST",
         order: 2,
-        question: '"the man"',
+        question: '"the man" (lesson 1)',
       },
       {
         id: 3,
-        lessonId: 1, // Nouns
+        lessonId: 1,
         type: "SELECT",
         order: 3,
-        question: 'Which one of these is the "the robot"?',
+        question: 'Which one of these is the "the robot"? (lesson 1)',
+      },
+      {
+        id: 4,
+        lessonId: 2, // lesson 2
+        type: "SELECT",
+        order: 1,
+        question: 'Which ? (lesson 2)',
+      },
+      {
+        id: 5,
+        lessonId: 2, 
+        type: "SELECT",
+        order: 2,
+        question: 'the women ? (lesson 2)',
       },
     ]);
-    // todo? > first challenge with 3 options
+    // todo! > first challenge with 3 options
     await db.insert(schema.challengeOptions).values([
       {
         challengeId: 1, // Which one of these is "the man"?
@@ -111,7 +158,7 @@ const main = async () => {
         audioSrc: "/es_robot.mp3",
       },
     ]);
-    // todo? > second challenge with 3 options
+    // todo! > second challenge with 3 options
     await db.insert(schema.challengeOptions).values([
       {
         challengeId: 2, // "the man"?
@@ -132,7 +179,7 @@ const main = async () => {
         audioSrc: "/es_robot.mp3",
       },
     ]);
-    // todo? > third challenge with 3 options
+    // todo! > third challenge with 3 options
     await db.insert(schema.challengeOptions).values([
       {
         challengeId: 3, // Which one of these is the "the robot"?

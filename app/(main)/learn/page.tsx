@@ -6,14 +6,36 @@ import { redirect } from "next/navigation"
 import { Header } from "./header"
 import { Unit } from "./unit"
 
-import { getUnits, getUserProgress } from "@/db/queries"
+import { getCourseProgress, getLessonPercentage, getUnits, getUserProgress, getUserSubscription } from "@/db/queries"
+import { lessons, units as unitsSchema } from "@/db/schema"
 
 const LearnPage = async () => {
   const userProgressData = getUserProgress()
   const unitData = getUnits()
-  const [ userProgress, units ] = await Promise.all([ userProgressData, unitData ]);
+
+  const courseProgressData = getCourseProgress();
+  const lessonPercentageData = getLessonPercentage();
+  const userSubscriptionData = getUserSubscription();
+
+  const [ 
+    userProgress, 
+    units, 
+    courseProgress, 
+    lessonPercentage, 
+    userSubscription, 
+  ] = await Promise.all([
+      userProgressData, 
+      unitData, 
+      courseProgressData, 
+      lessonPercentageData, 
+      userSubscriptionData,
+  ]);
 
   if (!userProgress || !userProgress.activeCourse) {
+    redirect("/courses");
+  }
+
+  if (!courseProgress) {
     redirect("/courses");
   }
 
@@ -34,15 +56,17 @@ const LearnPage = async () => {
         <Header title={userProgress.activeCourse.title} />
         
         {units.map((unit) => (
-          <div key={unit.id}>
+          <div key={unit.id} className="mb-10">
             <Unit
               id={unit.id}
               order={unit.order}
               description={unit.description}
               title={unit.title}
               lessons={unit.lessons}
-              activeLesson={undefined}
-              activeLessonPercentage={0}
+              activeLesson={courseProgress.activeLesson as typeof lessons.$inferSelect & {
+                unit: typeof unitsSchema.$inferSelect;
+              } | undefined}
+              activeLessonPercentage={lessonPercentage}
             />
           </div>
         ))}

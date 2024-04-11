@@ -9,7 +9,14 @@ const CoursesPage = async () => {
   // 2.同時執行, 節省時間, 提高性能？
   const coursesData = getCourses();
   const userProgressData = getUserProgress();
-  const [ courses, userProgress, ] = await Promise.all([ coursesData, userProgressData, ]);
+  
+  const [ 
+    courses, 
+    userProgress, 
+  ] = await Promise.all([ 
+    coursesData, 
+    userProgressData, 
+  ]);
 
   return (
     <div className="h-full max-w-[912px] px-3 mx-auto">
