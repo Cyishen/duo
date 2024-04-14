@@ -51,16 +51,21 @@ export const Sidebar = ({ className }: Props) => {
           href="/shop"
           iconSrc="/shop.svg"
         />
+        <div className="p-4">
+          <ClerkLoading>
+            <Loader className="h-5 w-5 text-muted-foreground animate-spin" />
+          </ClerkLoading>
+
+          <div className="flex items-center">
+            <ClerkLoaded>
+              <UserButton afterSignOutUrl="/" />
+              <p className="ml-5 text-sm text-slate-500">個人檔案</p>
+            </ClerkLoaded>
+          </div>
+        </div>
       </div>
 
-      <div className="p-4">
-        <ClerkLoading>
-          <Loader className="h-5 w-5 text-muted-foreground animate-spin" />
-        </ClerkLoading>
-        <ClerkLoaded>
-          <UserButton afterSignOutUrl="/" />
-        </ClerkLoaded>
-      </div>
+
     </div>
   );
 };
