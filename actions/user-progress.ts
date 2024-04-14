@@ -9,7 +9,10 @@ import { challengeProgress, challenges, userProgress } from "@/db/schema";
 import db from "@/db/drizzle";
 import { and, eq } from "drizzle-orm";
 
+import { POINTS_TO_REFILL } from "@/constants";
 
+
+//TODO:
 export const upsertUserProgress = async (courseId: number) => {
   const { userId } = await auth();
   const user = await currentUser();
@@ -53,6 +56,7 @@ export const upsertUserProgress = async (courseId: number) => {
     redirect("/learn");
 }
 
+//TODO:
 export const reduceHearts = async (challengeId: number) => {
   const { userId } = await auth();
 
@@ -109,28 +113,29 @@ export const reduceHearts = async (challengeId: number) => {
   revalidatePath(`/lesson/${lessonId}`);
 };
 
-// export const refillHearts = async () => {
-//   const currentUserProgress = await getUserProgress();
+//TODO:
+export const refillHearts = async () => {
+  const currentUserProgress = await getUserProgress();
 
-//   if (!currentUserProgress) {
-//     throw new Error("User progress not found");
-//   }
+  if (!currentUserProgress) {
+    throw new Error("User progress not found");
+  }
 
-//   if (currentUserProgress.hearts === 5) {
-//     throw new Error("Hearts are already full");
-//   }
+  if (currentUserProgress.hearts === 5) {
+    throw new Error("Hearts are already full");
+  }
 
-//   if (currentUserProgress.points < POINTS_TO_REFILL) {
-//     throw new Error("Not enough points");
-//   }
+  if (currentUserProgress.points < POINTS_TO_REFILL) {
+    throw new Error("Not enough points");
+  }
 
-//   await db.update(userProgress).set({
-//     hearts: 5,
-//     points: currentUserProgress.points - POINTS_TO_REFILL,
-//   }).where(eq(userProgress.userId, currentUserProgress.userId));
+  await db.update(userProgress).set({
+    hearts: 5,
+    points: currentUserProgress.points - POINTS_TO_REFILL,
+  }).where(eq(userProgress.userId, currentUserProgress.userId));
 
-//   revalidatePath("/shop");
-//   revalidatePath("/learn");
-//   revalidatePath("/quests");
-//   revalidatePath("/leaderboard");
-// };
+  revalidatePath("/shop");
+  revalidatePath("/learn");
+  revalidatePath("/quests");
+  revalidatePath("/leaderboard");
+};
