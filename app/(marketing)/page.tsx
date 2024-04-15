@@ -21,7 +21,7 @@ export default function Home() {
 
       <div className="flex flex-col items-center gap-y-8">
         <h1 className="text-xl lg:text-3xl font-bold text-neutral-600 max-w-[480px] text-center">
-          Learn, practice, and master new languages with Lingo.
+          在 Duo 學習外語, 好玩, 免費
         </h1>
         <div className="flex flex-col items-center gap-y-3 max-w-[330px] w-full">
           <ClerkLoading>
@@ -36,7 +36,7 @@ export default function Home() {
                 afterSignUpUrl="/learn"
               >
                 <Button size="lg" variant="secondary" className="w-full">
-                  Get Started
+                  開始
                 </Button>
               </SignUpButton>
               
@@ -46,7 +46,7 @@ export default function Home() {
                 afterSignUpUrl="/learn"
               >
                 <Button size="lg" variant="primaryOutline" className="w-full">
-                  I already have an account
+                  已經有帳戶
                 </Button>
               </SignInButton>
             </SignedOut>
@@ -54,7 +54,7 @@ export default function Home() {
             <SignedIn>
               <Button size="lg" variant="secondary" className="w-full" asChild>
                 <Link href="/learn">
-                  Continue Learning
+                  開始
                 </Link>
               </Button>
             </SignedIn>

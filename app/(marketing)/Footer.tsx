@@ -7,43 +7,33 @@ export const Footer = () => {
       <div className="max-w-screen-lg mx-auto flex items-center justify-evenly h-full">
         <Button size="lg" variant="ghost" className="w-full">
           <Image 
-            src="/hr.svg" 
-            alt="Croatian" 
-            height={32} 
-            width={40}
-            className="mr-4 rounded-md"
-          />
-          Croatian
-        </Button>
-        <Button size="lg" variant="ghost" className="w-full">
-          <Image 
             src="/es.svg" 
             alt="Spanish" 
             height={32} 
             width={40}
             className="mr-4 rounded-md"
           />
-          Spanish
+          西班牙語
         </Button>
         <Button size="lg" variant="ghost" className="w-full">
           <Image 
-            src="/fr.svg" 
+            src="/us.svg" 
+            alt="Croatian" 
+            height={32} 
+            width={40}
+            className="mr-4 rounded-md"
+          />
+          英語
+        </Button>
+        <Button size="lg" variant="ghost" className="w-full">
+          <Image 
+            src="/mascot.svg" 
             alt="French" 
-            height={32} 
-            width={40}
+            height={30} 
+            width={30}
             className="mr-4 rounded-md"
           />
-          French
-        </Button>
-        <Button size="lg" variant="ghost" className="w-full">
-          <Image 
-            src="/it.svg" 
-            alt="Italian" 
-            height={32} 
-            width={40}
-            className="mr-4 rounded-md"
-          />
-          Italian
+          Duo
         </Button>
         <Button size="lg" variant="ghost" className="w-full">
           <Image 
@@ -53,7 +43,17 @@ export const Footer = () => {
             width={40}
             className="mr-4 rounded-md"
           />
-          Japanese
+          日語
+        </Button>
+        <Button size="lg" variant="ghost" className="w-full">
+          <Image 
+            src="/kr.svg" 
+            alt="Italian" 
+            height={32} 
+            width={40}
+            className="mr-4 rounded-md"
+          />
+          韓語
         </Button>
       </div>
     </footer>
