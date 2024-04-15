@@ -42,7 +42,7 @@ export const Sidebar = ({ className }: Props) => {
           iconSrc="/leaderboard.svg"
         />
         <SidebarItem 
-          label="問題" 
+          label="特別任務" 
           href="/quests"
           iconSrc="/quests.svg"
         />
