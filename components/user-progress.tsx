@@ -27,16 +27,20 @@ export const UserProgress = ({
           <Image
             src={activeCourse.imageSrc}
             alt={activeCourse.title}
-            className="rounded-md border"
             width={32}
             height={32}
           />
         </Button>
       </Link>
 
+      <Button variant="ghost" className="text-orange-500">
+          <Image src="/fire.svg" height={25} width={25} alt="Points" className="mr-2" />
+          21
+      </Button>
+
       <Link href="/shop">
-        <Button variant="ghost" className="text-orange-500">
-          <Image src="/points.svg" height={28} width={28} alt="Points" className="mr-2" />
+        <Button variant="ghost" className="text-blue-500">
+          <Image src="/points.svg" height={23} width={23} alt="Points" className="mr-2 flex items-center" />
           {points}
         </Button>
       </Link>

@@ -11,6 +11,7 @@ import { StickyWrapper } from "@/components/sticky-wrapper";
 import { getUserProgress, getUserSubscription } from "@/db/queries";
 
 import { Items } from "./items";
+import { Button } from "@/components/ui/button";
 
 const ShopPage = async () => {
   const userProgressData = getUserProgress();
@@ -46,19 +47,40 @@ const ShopPage = async () => {
       </StickyWrapper>
 
       <FeedWrapper>
-        <div className="w-full flex flex-col items-center">
-          <Image
-            src="/shop.svg"
-            alt="Shop"
-            height={90}
-            width={90}
+        <div className="md:hidden mb-4">
+          <UserProgress 
+            activeCourse={userProgress.activeCourse} 
+            hearts={userProgress.hearts} 
+            points={userProgress.points} 
+            hasActiveSubscription={isPro} 
           />
-          <h1 className="text-center font-bold text-neutral-800 text-2xl my-6">
-            Shop
+        </div>
+
+        <div className="w-full flex flex-col items-center">
+          <div className="w-full bg-blue-900 min-h-[200px] rounded-2xl p-5 relative">
+            <h1 className="text-center font-bold text-white text-2xl my-6">
+              免費體驗 Super
+            </h1>
+
+            <Button
+              size="lg"
+              className="w-full mt-5"
+            >
+              開始體驗
+            </Button>
+
+            <Image
+              src="/super.svg"
+              alt="super"
+              height={23}
+              width={86}
+              className="absolute m-4 top-0 right-0"
+            />
+          </div>
+
+          <h1 className="w-full font-bold text-neutral-800 text-2xl my-6 z-10">
+            愛心
           </h1>
-          <p className="text-muted-foreground text-center text-lg mb-6">
-            Spend your points on cool stuff.
-          </p>
 
           <Items
             hearts={userProgress.hearts}

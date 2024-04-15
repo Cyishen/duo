@@ -24,10 +24,10 @@ export const UnitBanner = ({ title, description, }: Props) => {
         <Button
           size="lg"
           variant="secondary"
-          className="hidden xl:flex border-2 border-b-4 active:border-b-2"
+          className="xl:flex border-2 border-b-4 active:border-b-2"
         >
-          <NotebookText className="mr-2" />
-          Continue
+          <NotebookText />
+          <p className="hidden xl:flex ml-2">繼續</p>
         </Button>
       </Link>
     </div>

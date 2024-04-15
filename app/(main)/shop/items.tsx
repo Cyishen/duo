@@ -58,10 +58,11 @@ export const Items = ({
         />
         <div className="flex-1">
           <p className="text-neutral-700 text-base lg:text-xl font-bold">
-            Refill hearts
+            補心
           </p>
         </div>
         <Button
+          size="lg"
           onClick={onRefillHearts}
           disabled={
             pending
@@ -70,7 +71,7 @@ export const Items = ({
           }
         >
           {hearts === 5
-            ? "full"
+            ? "已滿"
             : (
               <div className="flex items-center">
                 <Image
@@ -97,14 +98,15 @@ export const Items = ({
         />
         <div className="flex-1">
           <p className="text-neutral-700 text-base lg:text-xl font-bold">
-            Unlimited hearts
+            無限愛心
           </p>
         </div>
         <Button
+          size="lg"
           onClick={onUpgrade}
           disabled={pending}
         >
-          {hasActiveSubscription ? "settings" : "upgrade"}
+          {hasActiveSubscription ? "設定" : "體驗"}
         </Button>
       </div>
     </ul>

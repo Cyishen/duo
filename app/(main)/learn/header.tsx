@@ -13,6 +13,7 @@ export const Header = ({ title }: Props) => {
       <Link href="/courses">
         <Button variant="ghost" size="sm">
           <ArrowLeft className="h-5 w-5 stroke-2 text-neutral-400" />
+          返回
         </Button>
       </Link>
       <h1 className="font-bold text-lg">

@@ -39,6 +39,8 @@ const LearnPage = async () => {
     redirect("/courses");
   }
 
+  const isPro = !!userSubscription?.isActive;
+
   return (
     <div className="flex flex-row-reverse gap-[48px] px-6">
       {/* sticky on desktop */}
@@ -47,12 +49,21 @@ const LearnPage = async () => {
           activeCourse={userProgress.activeCourse} 
           hearts={userProgress.hearts} 
           points={userProgress.points} 
-          hasActiveSubscription={false} 
+          hasActiveSubscription={isPro} 
         />
       </StickyWrapper>
 
       {/* Feed on mobile */}
       <FeedWrapper>
+        <div className="md:hidden mb-4">
+          <UserProgress 
+            activeCourse={userProgress.activeCourse} 
+            hearts={userProgress.hearts} 
+            points={userProgress.points} 
+            hasActiveSubscription={isPro} 
+          />
+        </div>
+
         <Header title={userProgress.activeCourse.title} />
         
         {units.map((unit) => (

@@ -32,22 +32,22 @@ export const Sidebar = ({ className }: Props) => {
 
       <div className="flex flex-col gap-y-2 flex-1">
         <SidebarItem 
-          label="Learn" 
+          label="學習" 
           href="/learn"
           iconSrc="/learn.svg"
         />
         <SidebarItem 
-          label="Leaderboard" 
+          label="排行榜" 
           href="/leaderboard"
           iconSrc="/leaderboard.svg"
         />
         <SidebarItem 
-          label="quests" 
+          label="問題" 
           href="/quests"
           iconSrc="/quests.svg"
         />
         <SidebarItem 
-          label="shop" 
+          label="寶石商店" 
           href="/shop"
           iconSrc="/shop.svg"
         />
@@ -59,7 +59,7 @@ export const Sidebar = ({ className }: Props) => {
           <div className="flex items-center">
             <ClerkLoaded>
               <UserButton afterSignOutUrl="/" />
-              <p className="ml-5 text-sm text-slate-500">個人檔案</p>
+              <p className="ml-5 text-sm font-medium text-slate-500">更多</p>
             </ClerkLoaded>
           </div>
         </div>

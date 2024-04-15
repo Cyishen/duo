@@ -21,39 +21,39 @@ const main = async () => {
     await db.delete(schema.userSubscription);
 
     await db.insert(schema.courses).values([
-      { id: 1, title: "Spanish", imageSrc: "/es.svg", },
-      { id: 2, title: "Italian", imageSrc: "/it.svg", },
-      { id: 3, title: "French", imageSrc: "/fr.svg", },
-      { id: 4, title: "Croatian", imageSrc: "/hr.svg", },
+      { id: 1, title: "西班牙語", imageSrc: "/es.svg", },
+      { id: 2, title: "英語", imageSrc: "/us.svg", },
+      { id: 3, title: "日語", imageSrc: "/jp.svg", },
+      { id: 4, title: "韓語", imageSrc: "/kr.svg", },
     ]);
 
     await db.insert(schema.units).values([
       {
-        id: 1, // Spanish
+        id: 1,
         courseId: 1,
         title: "Unit 1",
-        description: "Learn Spanish",
+        description: "Learn 西班牙語",
         order: 1,
       },
       {
-        id: 2, // italian
+        id: 2, 
         courseId: 2,
         title: "Unit 2",
-        description: "Learn italian",
+        description: "Learn 英語",
         order: 2,
       },
       {
-        id: 3, // French
+        id: 3,
         courseId: 3,
         title: "Unit 3",
-        description: "Learn French",
+        description: "Learn 日語",
         order: 3,
       },
       {
-        id: 4, // Croatian
+        id: 4,
         courseId: 4,
         title: "Unit 4",
-        description: "Learn Croatian",
+        description: "Learn 韓語",
         order: 4,
       },
     ]);
@@ -157,7 +157,7 @@ const main = async () => {
       },
     ]);
 
-    // TODO: unit 1 > lesson 1 opt
+    // todo*: unit 1 > lesson 1 opt
     await db.insert(schema.challengeOptions).values([
       {
         challengeId: 1, // Which one of these is "the man"?
@@ -220,8 +220,7 @@ const main = async () => {
         audioSrc: "/es_robot.mp3",
       },
     ]);
-
-    // TODO: unit 1 > lesson 2 opt
+    // todo*: unit 1 > lesson 2 opt
     await db.insert(schema.challengeOptions).values([
       {
         challengeId: 4, // lesson 2 q1 Which one of these is "the girl"?
@@ -266,7 +265,7 @@ const main = async () => {
         audioSrc: "/es_robot.mp3",
       },
     ]);
-    // TODO: unit 1 > lesson 3 opt
+    // todo*: unit 1 > lesson 3 opt
     await db.insert(schema.challengeOptions).values([
       {
         challengeId: 6, // lesson 3
