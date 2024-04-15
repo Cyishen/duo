@@ -10,7 +10,7 @@ import { getUserProgress, getUserSubscription } from "@/db/queries";
 import { Progress } from "@/components/ui/progress";
 import { quests } from "@/constants";
 
-// import { Promo } from "@/components/promo";
+import { Promo } from "@/components/promo";
 
 const QuestsPage = async () => {
   const userProgressData = getUserProgress();
@@ -39,9 +39,9 @@ const QuestsPage = async () => {
           points={userProgress.points}
           hasActiveSubscription={isPro}
         />
-        {/* {!isPro && (
+        {!isPro && (
           <Promo />
-        )} */}
+        )}
       </StickyWrapper>
 
       <FeedWrapper>
@@ -84,7 +84,7 @@ const QuestsPage = async () => {
                       {quest.title}
                     </p>
 
-                    <Progress value={progress} className="h-4" />
+                    <Progress value={progress} className="h-4" color="bg-yellow-400" />
                     
                     <p className="text-right">
                       {userProgress.points}/ {quest.value}

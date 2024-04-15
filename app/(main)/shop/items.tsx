@@ -60,6 +60,9 @@ export const Items = ({
           <p className="text-neutral-700 text-base lg:text-xl font-bold">
             補心
           </p>
+          <p className="text-muted-foreground">
+            消費寶石獲取愛心全滿
+          </p>
         </div>
         <Button
           size="lg"
@@ -99,6 +102,9 @@ export const Items = ({
         <div className="flex-1">
           <p className="text-neutral-700 text-base lg:text-xl font-bold">
             無限愛心
+          </p>
+          <p className="text-muted-foreground">
+            無廣告, 答錯不扣愛心, 學習加倍
           </p>
         </div>
         <Button

@@ -5,8 +5,8 @@ import { FeedWrapper } from "@/components/feed-wrapper";
 import { UserProgress } from "@/components/user-progress";
 import { StickyWrapper } from "@/components/sticky-wrapper";
 
-// import { Promo } from "@/components/promo";
-// import { Quests } from "@/components/quests";
+import { Promo } from "@/components/promo";
+import { Quests } from "@/components/quests";
 
 import { getUserProgress, getUserSubscription } from "@/db/queries";
 
@@ -40,10 +40,10 @@ const ShopPage = async () => {
           points={userProgress.points}
           hasActiveSubscription={isPro}
         />
-        {/* {!isPro && (
+        {!isPro && (
           <Promo />
         )}
-        <Quests points={userProgress.points} /> */}
+        <Quests points={userProgress.points} />
       </StickyWrapper>
 
       <FeedWrapper>
@@ -66,7 +66,7 @@ const ShopPage = async () => {
               size="lg"
               className="w-full mt-5"
             >
-              開始體驗
+              體驗 Super
             </Button>
 
             <Image

@@ -24,7 +24,12 @@ export const HeartsModal = () => {
 
   const onClick = () => {
     close();
-    router.push("/store");
+    router.push("/shop");
+  };
+
+  const onClickLeave = () => {
+    close();
+    router.push("/learn");
   };
 
   if (!isClient) {
@@ -44,10 +49,10 @@ export const HeartsModal = () => {
             />
           </div>
           <DialogTitle className="text-center font-bold text-2xl">
-            You ran out of hearts!
+            愛心用完了
           </DialogTitle>
           <DialogDescription className="text-center text-base">
-            Get Pro for unlimited hearts, or purchase them in the store.
+            體驗 Super 無限愛心 or 做練習
           </DialogDescription>
         </DialogHeader>
         <DialogFooter className="mb-4">
@@ -58,13 +63,13 @@ export const HeartsModal = () => {
               size="lg" 
               onClick={onClick}
             >
-              Get unlimited hearts
+              體驗 Super
             </Button>
             <Button
               variant="primaryOutline" 
               className="w-full" 
               size="lg" 
-              onClick={close}
+              onClick={onClickLeave}
             >
               No thanks
             </Button>
