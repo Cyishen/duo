@@ -13,6 +13,10 @@ import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Promo } from "@/components/promo";
 import { Quests } from "@/components/quests";
 
+import { hardcodedUsers } from "@/constants";
+import { cn } from "@/lib/utils";
+import { auth, currentUser } from "@clerk/nextjs";
+
 const LearderboardPage = async () => {
   const userProgressData = getUserProgress();
   const userSubscriptionData = getUserSubscription();
@@ -28,11 +32,17 @@ const LearderboardPage = async () => {
     leaderboardData,
   ]);
 
+  const { userId } = await auth();
+  const user = await currentUser();
+
   if (!userProgress || !userProgress.activeCourse) {
     redirect("/courses");
   }
 
   const isPro = !!userSubscription?.isActive;
+
+  const leaderboardMargin = [...hardcodedUsers, ...leaderboard];
+  leaderboardMargin.sort((a, b) => b.points - a.points);
 
   return ( 
     <div className="flex flex-row-reverse gap-[48px] px-6">
@@ -58,17 +68,33 @@ const LearderboardPage = async () => {
             width={90}
           />
           <h1 className="text-center font-bold text-neutral-800 text-2xl my-6">
-            藍寶石等級
+            排行榜
           </h1>
 
           <Separator className="mb-4 h-0.5 rounded-full" />
 
-          {leaderboard.map((userProgress, index) => (
+          {leaderboardMargin.map((userProgress, index) => (
             <div 
               key={userProgress.userId}
-              className="flex items-center w-full p-2 px-4 rounded-xl hover:bg-gray-200/50"
+              className={cn(
+                "flex items-center w-full p-2 px-4 rounded-xl hover:bg-gray-200/50",
+                userProgress.userId === userId && "bg-yellow-100"
+              )}
             >
-              <p className="font-bold text-lime-600 mr-4">{index + 1}</p>
+              <div className="flex justify-center w-8"> 
+                {(index + 1) <= 3 && (
+                  <Image
+                    src={`/user/${index + 1}.svg`}
+                    alt={`${index + 1}st place`}
+                    width={30}
+                    height={30}
+                  />
+                )}
+
+                {(index + 1) > 3 && (
+                  <p className="font-bold text-lime-600">{index + 1}</p>
+                )}
+              </div>
 
               <Avatar
                 className="border bg-green-500 h-12 w-12 ml-3 mr-6"

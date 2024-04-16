@@ -36,24 +36,26 @@ export const upsertUserProgress = async (courseId: number) => {
   if (existingUserProgress) {
     await db.update(userProgress).set({
       activeCourseId: courseId,
-      userName: user.firstName || "User",
+      userName: user.username || "User",
       userImageSrc: user.imageUrl || "/mascot.svg",
     });
 
     revalidatePath("/courses");
     revalidatePath("/learn");
+    revalidatePath("/leaderboard");
     redirect("/learn");
   }
 
   await db.insert(userProgress).values({
     userId,
     activeCourseId: courseId,
-    userName: user.firstName || "User",
+    userName: user.username || "User",
     userImageSrc: user.imageUrl || "/mascot.svg",
   });
 
     revalidatePath("/courses");
     revalidatePath("/learn");
+    revalidatePath("/leaderboard");
     redirect("/learn");
 }
 
@@ -140,3 +142,23 @@ export const refillHearts = async () => {
   revalidatePath("/quests");
   revalidatePath("/leaderboard");
 };
+
+//todo!
+// export const updateUser = async () => {
+//   const { userId } = await auth();
+//   const current = await currentUser();
+
+//   if (!userId || !current) {
+//     throw new Error("Unauthorized");
+//   }
+
+//   const existingUserProgress = await getUserProgress();
+
+//   if (existingUserProgress?.userId === current?.id) {
+//     await db.update(userProgress)
+//       .set({
+//         userName: current.username || "User",
+//         userImageSrc: current.imageUrl || "/mascot.svg",
+//       });
+//   }
+// }
