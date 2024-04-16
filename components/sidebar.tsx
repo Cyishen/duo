@@ -10,6 +10,8 @@ import { Loader } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 import { SidebarItem } from "./sidebar-item";
+import { isAdmin } from "@/lib/admin";
+import { Button } from "./ui/button";
 
 type Props = {
   className?: string;
@@ -56,11 +58,24 @@ export const Sidebar = ({ className }: Props) => {
             <Loader className="h-5 w-5 text-muted-foreground animate-spin" />
           </ClerkLoading>
 
-          <div className="flex items-center">
-            <ClerkLoaded>
-              <UserButton afterSignOutUrl="/" />
-              <p className="ml-5 text-sm font-medium text-slate-500">更多</p>
-            </ClerkLoaded>
+          <div className="flex items-center w-full">
+              <ClerkLoaded>
+                <UserButton afterSignOutUrl="/" />
+                <p className="flex w-full ml-5 text-sm font-medium text-slate-500">更多</p>
+              </ClerkLoaded>
+              
+              <div className="flex justify-end w-full">
+                {isAdmin() ? (
+                  <Link href="/admin">
+                    <Button
+                      size="sm"
+                      variant="primary"
+                    >
+                      Admin
+                    </Button>
+                  </Link>
+                ) : ""}
+              </div>
           </div>
         </div>
       </div>
