@@ -16,6 +16,7 @@ import { Quests } from "@/components/quests";
 import { hardcodedUsers } from "@/constants";
 import { cn } from "@/lib/utils";
 import { auth, currentUser } from "@clerk/nextjs";
+import Ani from "./ani";
 
 const LearderboardPage = async () => {
   const userProgressData = getUserProgress();
@@ -61,12 +62,29 @@ const LearderboardPage = async () => {
 
       <FeedWrapper>
         <div className="w-full flex flex-col items-center">
-          <Image
-            src="/leaderboard.svg"
-            alt="Leaderboard"
-            height={90}
-            width={90}
-          />
+          <div className="relative">
+            <Image
+              src="/leaderboard.svg"
+              alt="Leaderboard"
+              height={90}
+              width={90}
+            />
+            <Image
+              src="/user/2.svg"
+              alt="Leaderboard"
+              height={60}
+              width={60}
+              className="absolute top-7 -left-14"
+            />
+            <Image
+              src="/user/3.svg"
+              alt="Leaderboard"
+              height={60}
+              width={60}
+              className="absolute top-9 -right-14"
+            />
+          </div>
+
           <h1 className="text-center font-bold text-neutral-800 text-2xl my-6">
             排行榜
           </h1>
@@ -108,7 +126,13 @@ const LearderboardPage = async () => {
               <p className="font-bold text-neutral-800 flex-1">
                 {userProgress.userName}
               </p>
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground relative">
+                {userProgress.userId === userId && 
+                (
+                  <div className="absolute -top-8 -left-20">
+                    <Ani />
+                  </div>
+                )}
                 {userProgress.points} 經驗
               </p>
             </div>

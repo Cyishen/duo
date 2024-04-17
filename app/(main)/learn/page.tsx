@@ -4,6 +4,7 @@ import { UserProgress } from "@/components/user-progress"
 import { redirect } from "next/navigation"
 import { Promo } from "@/components/promo"
 import { Quests } from "@/components/quests"
+import { Ad } from "@/components/ad"
 
 import { Header } from "./header"
 import { Unit } from "./unit"
@@ -57,7 +58,12 @@ const LearnPage = async () => {
         {!isPro && (
           <Promo />
         )}
+
         <Quests points={userProgress.points} />
+
+        {!isPro && (
+          <Ad />
+        )}
       </StickyWrapper>
 
       {/* Feed on mobile */}

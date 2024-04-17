@@ -9,7 +9,8 @@
     "lint": "next lint",
     "db:studio": "npx drizzle-kit studio",
     "db:push": "npx drizzle-kit push:pg",
-    "db:seed": "tsx ./scripts/seed.ts"
+    "db:seed": "tsx ./scripts/seed.ts",
+    "db:prod": "tsx ./scripts/prod.ts"
   },
   "dependencies": {
     "@clerk/localizations": "^1.26.16",
@@ -24,6 +25,7 @@
     "clsx": "^2.1.0",
     "dotenv": "^16.4.5",
     "drizzle-orm": "^0.30.7",
+    "lottie-react": "^2.4.0",
     "lucide-react": "^0.363.0",
     "next": "14.1.4",
     "next-themes": "^0.3.0",

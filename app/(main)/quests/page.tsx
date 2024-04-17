@@ -11,6 +11,7 @@ import { Progress } from "@/components/ui/progress";
 import { quests } from "@/constants";
 
 import { Promo } from "@/components/promo";
+import { Button } from "@/components/ui/button";
 
 const QuestsPage = async () => {
   const userProgressData = getUserProgress();
@@ -50,6 +51,13 @@ const QuestsPage = async () => {
             <h1 className="text-center font-bold text-white text-2xl my-6">
               免費體驗 Super
             </h1>
+
+            <Button
+              size="lg"
+              className="w-full mt-5"
+            >
+              體驗 Super
+            </Button>
 
             <Image
               src="/super.svg"

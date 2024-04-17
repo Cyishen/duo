@@ -7,11 +7,13 @@ import { StickyWrapper } from "@/components/sticky-wrapper";
 
 import { Promo } from "@/components/promo";
 import { Quests } from "@/components/quests";
+import { Ad } from "@/components/ad";
 
 import { getUserProgress, getUserSubscription } from "@/db/queries";
 
 import { Items } from "./items";
 import { Button } from "@/components/ui/button";
+import Ani from "./ani";
 
 const ShopPage = async () => {
   const userProgressData = getUserProgress();
@@ -44,6 +46,9 @@ const ShopPage = async () => {
           <Promo />
         )}
         <Quests points={userProgress.points} />
+        {!isPro && (
+          <Ad />
+        )}
       </StickyWrapper>
 
       <FeedWrapper>
@@ -87,6 +92,8 @@ const ShopPage = async () => {
             points={userProgress.points}
             hasActiveSubscription={isPro}
           />
+
+          <Ani />
         </div>
       </FeedWrapper>
     </div>

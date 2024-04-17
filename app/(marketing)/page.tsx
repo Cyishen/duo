@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import { Loader } from "lucide-react";
 import { 
@@ -11,17 +10,22 @@ import {
 } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Ani from "../(main)/shop/ani";
+
 
 export default function Home() {
   return (
     <div className="max-w-[988px] mx-auto flex-1 w-full flex flex-col lg:flex-row items-center justify-center p-4 gap-2">
       <div className="relative w-[240px] h-[240px] lg:w-[424px] lg:h-[424px] mb-8 lg:mb-0">
-        <Image src="/hero.svg" fill alt="Hero" />
+        <div className="transform scale-x-[-1]">
+          <Ani />
+        </div>
       </div>
 
       <div className="flex flex-col items-center gap-y-8">
         <h1 className="text-xl lg:text-3xl font-bold text-neutral-600 max-w-[480px] text-center">
-          在 Duo 學習外語, 好玩, 免費
+          在 Duo 學習語言, 有趣好玩, 而且 ...
+          <p>還免費</p>
         </h1>
         <div className="flex flex-col items-center gap-y-3 max-w-[330px] w-full">
           <ClerkLoading>

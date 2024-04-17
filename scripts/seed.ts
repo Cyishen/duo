@@ -21,40 +21,40 @@ const main = async () => {
     await db.delete(schema.userSubscription);
 
     await db.insert(schema.courses).values([
-      { id: 1, title: "西班牙語", imageSrc: "/es.svg", },
-      { id: 2, title: "英語", imageSrc: "/us.svg", },
-      { id: 3, title: "日語", imageSrc: "/jp.svg", },
-      { id: 4, title: "韓語", imageSrc: "/kr.svg", },
+      { id: 1, title: "英語", imageSrc: "/us.svg", },
+      { id: 2, title: "日語", imageSrc: "/jp.svg", },
+      { id: 3, title: "韓語", imageSrc: "/kr.svg", },
+      { id: 4, title: "西班牙語", imageSrc: "/es.svg", },
     ]);
 
     await db.insert(schema.units).values([
       {
         id: 1,
         courseId: 1,
-        title: "Unit 1",
-        description: "Learn 西班牙語",
+        title: "第 1 階段",
+        description: "生活日常",
         order: 1,
       },
       {
         id: 2, 
-        courseId: 2,
-        title: "Unit 2",
-        description: "Learn 英語",
+        courseId: 1,
+        title: "第 2 階段",
+        description: "餐廳點餐",
         order: 2,
       },
       {
         id: 3,
-        courseId: 3,
-        title: "Unit 3",
-        description: "Learn 日語",
-        order: 3,
+        courseId: 2,
+        title: "日語 第 1 階段",
+        description: "打招呼",
+        order: 1,
       },
       {
         id: 4,
-        courseId: 4,
-        title: "Unit 4",
-        description: "Learn 韓語",
-        order: 4,
+        courseId: 3,
+        title: "韓語 第 1 階段",
+        description: "打招呼",
+        order: 1,
       },
     ]);
 
@@ -62,45 +62,81 @@ const main = async () => {
     await db.insert(schema.lessons).values([
       {
         id: 1,
-        unitId: 1, // Unit 1 
+        unitId: 1, // course1 > Unit 1 
         order: 1,
-        title: "Nouns",
+        title: "打招呼",
       },
       {
         id: 2,
         unitId: 1, 
         order: 2,
-        title: "Verbs",
+        title: "討論日常活動",
       },
       {
         id: 3,
         unitId: 1, 
         order: 3,
-        title: "Verbs",
+        title: "聊天",
       },
       {
         id: 4,
         unitId: 1, 
         order: 4,
-        title: "Verbs",
+        title: "建立中...",
       },
       {
         id: 5,
         unitId: 1, 
         order: 5,
-        title: "Verbs",
+        title: "建立中...",
       },
       {
         id: 6,
-        unitId: 2, // Unit 2
+        unitId: 2, // course1 > Unit 2 
         order: 1,
-        title: "Nouns",
+        title: "喜歡的東西",
       },
       {
         id: 7,
         unitId: 2, 
         order: 2,
-        title: "Verbs",
+        title: "喜歡做什麼",
+      },
+      {
+        id: 8,
+        unitId: 3, // course1 > Unit 3 
+        order: 1,
+        title: "餐廳點餐(us)",
+      },
+      {
+        id: 9,
+        unitId: 3,
+        order: 2,
+        title: "點餐",
+      },
+      {
+        id: 10,
+        unitId: 4, // course2
+        order: 1,
+        title: "用日語打招呼",
+      },
+      {
+        id: 11,
+        unitId: 4, 
+        order: 2,
+        title: "餐廳點餐(jp)",
+      },
+      {
+        id: 12,
+        unitId: 5, // course3
+        order: 1,
+        title: "用韓語打招呼",
+      },
+      {
+        id: 13,
+        unitId: 5,
+        order: 2,
+        title: "餐廳點餐(kr)",
       },
     ]);
 

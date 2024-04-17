@@ -29,13 +29,16 @@ export const ResultCard = ({ value, variant }: Props) => {
         variant === "hearts" && "text-rose-500",
         variant === "points" && "text-orange-400"
       )}>
-        <Image
-          alt="Icon"
-          src={imageSrc}
-          height={30}
-          width={30}
-          className="mr-1.5"
-        />
+        <div className="flex items-center h-9">
+          <Image
+            alt="Icon"
+            src={imageSrc}
+            height={30}
+            width={30}
+            className="mr-1.5"
+          />
+        </div>
+
         {value}
       </div>
     </div>
