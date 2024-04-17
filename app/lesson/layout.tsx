@@ -1,5 +1,15 @@
+import { Metadata } from "next";
+
 type Props = {
   children: React.ReactNode;
+};
+
+export const metadata: Metadata = {
+  title: "Duo clone",
+  description: "Duo clone App",
+  icons: {
+    icon: "/mascot.svg"
+  }
 };
 
 const LessonLayout = ({ children }: Props) => {

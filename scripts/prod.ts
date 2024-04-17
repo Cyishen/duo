@@ -75,20 +75,20 @@ const main = async () => {
                   .values([
                     {
                       lessonId: lesson.id,
-                      type: "SELECT",
-                      question: '打招呼1-1',
+                      type: "ASSIST",
+                      question: 'Can you _ Duo?',
                       order: 1,
                     },
                     {
                       lessonId: lesson.id,
                       type: "SELECT",
-                      question: '打招呼1-2',
+                      question: 'Which one is student?',
                       order: 2,
                     },
                     {
                       lessonId: lesson.id,
-                      type: "SELECT",
-                      question: '打招呼1-3?',
+                      type: "ASSIST",
+                      question: 'Lisa, do you want to go to the beach together?',
                       order: 3,
                     },
                   ])
@@ -100,24 +100,15 @@ const main = async () => {
                     await db.insert(schema.challengeOptions).values([
                       {
                         challengeId: challenge.id,
+                        correct: false,
+                        text: "Sound: ",
+                        audioSrc: "/source/us/unit_1/timed.mp3",
+                      },
+                      {
+                        challengeId: challenge.id,
                         correct: true,
-                        text: "el hombre",
-                        imageSrc: "/man.svg",
-                        audioSrc: "/es_man.mp3",
-                      },
-                      {
-                        challengeId: challenge.id,
-                        correct: false,
-                        text: "la mujer",
-                        imageSrc: "/woman.svg",
-                        audioSrc: "/es_woman.mp3",
-                      },
-                      {
-                        challengeId: challenge.id,
-                        correct: false,
-                        text: "el chico",
-                        imageSrc: "/boy.svg",
-                        audioSrc: "/es_boy.mp3",
+                        text: "Sound: ",
+                        audioSrc: "/source/us/unit_1/find.mp3",
                       },
                     ]);
                   }
@@ -126,24 +117,21 @@ const main = async () => {
                     await db.insert(schema.challengeOptions).values([
                       {
                         challengeId: challenge.id,
+                        correct: false,
+                        text: "?",
+                        imageSrc: "/source/us/unit_1/baby.svg"
+                      },
+                      {
+                        challengeId: challenge.id,
                         correct: true,
-                        text: "la mujer",
-                        imageSrc: "/woman.svg",
-                        audioSrc: "/es_woman.mp3",
+                        text: "?",
+                        imageSrc: "/source/us/unit_1/student.svg"
                       },
                       {
                         challengeId: challenge.id,
                         correct: false,
-                        text: "el chico",
-                        imageSrc: "/boy.svg",
-                        audioSrc: "/es_boy.mp3",
-                      },
-                      {
-                        challengeId: challenge.id,
-                        correct: false,
-                        text: "el hombre",
-                        imageSrc: "/man.svg",
-                        audioSrc: "/es_man.mp3",
+                        text: "?",
+                        imageSrc: "/source/us/unit_1/doctor.svg"
                       },
                     ]);
                   }
@@ -153,48 +141,40 @@ const main = async () => {
                       {
                         challengeId: challenge.id,
                         correct: false,
-                        text: "la mujer",
-                        imageSrc: "/woman.svg",
-                        audioSrc: "/es_woman.mp3",
-                      },
-                      {
-                        challengeId: challenge.id,
-                        correct: false,
-                        text: "el hombre",
-                        imageSrc: "/man.svg",
-                        audioSrc: "/es_man.mp3",
+                        text: "Yes, my flowers are red and white.",
                       },
                       {
                         challengeId: challenge.id,
                         correct: true,
-                        text: "el chico",
-                        imageSrc: "/boy.svg",
-                        audioSrc: "/es_boy.mp3",
+                        text: "Yes, but it's busy on holidays.",
                       },
                     ]);
                   }
+
+
                 }
               }
+
               if (lesson.order === 2) {
                 const challenges = await db
                   .insert(schema.challenges)
                   .values([
                     {
                       lessonId: lesson.id,
-                      type: "SELECT",
-                      question: '日常活動2-1',
+                      type: "ASSIST",
+                      question: 'He is _ man',
                       order: 1,
                     },
                     {
                       lessonId: lesson.id,
-                      type: "SELECT",
-                      question: '日常活動2-2',
+                      type: "ASSIST",
+                      question: '在討論什麼? Yes, She is my Chinese teacher and he is my English teacher.',
                       order: 2,
                     },
                     {
                       lessonId: lesson.id,
-                      type: "SELECT",
-                      question: '日常活動2-3?',
+                      type: "ASSIST",
+                      question: '_ old house.',
                       order: 3,
                     },
                   ])
@@ -207,23 +187,12 @@ const main = async () => {
                       {
                         challengeId: challenge.id,
                         correct: true,
-                        text: "el hombre",
-                        imageSrc: "/man.svg",
-                        audioSrc: "/es_man.mp3",
+                        text: "a",
                       },
                       {
                         challengeId: challenge.id,
                         correct: false,
-                        text: "la mujer",
-                        imageSrc: "/woman.svg",
-                        audioSrc: "/es_woman.mp3",
-                      },
-                      {
-                        challengeId: challenge.id,
-                        correct: false,
-                        text: "el chico",
-                        imageSrc: "/boy.svg",
-                        audioSrc: "/es_boy.mp3",
+                        text: "an",
                       },
                     ]);
                   }
@@ -233,23 +202,17 @@ const main = async () => {
                       {
                         challengeId: challenge.id,
                         correct: true,
-                        text: "la mujer",
-                        imageSrc: "/woman.svg",
-                        audioSrc: "/es_woman.mp3",
+                        text: "她的老師",
                       },
                       {
                         challengeId: challenge.id,
                         correct: false,
-                        text: "el chico",
-                        imageSrc: "/boy.svg",
-                        audioSrc: "/es_boy.mp3",
+                        text: "餐廳食物",
                       },
                       {
                         challengeId: challenge.id,
                         correct: false,
-                        text: "el hombre",
-                        imageSrc: "/man.svg",
-                        audioSrc: "/es_man.mp3",
+                        text: "她的新家",
                       },
                     ]);
                   }
@@ -259,48 +222,38 @@ const main = async () => {
                       {
                         challengeId: challenge.id,
                         correct: false,
-                        text: "la mujer",
-                        imageSrc: "/woman.svg",
-                        audioSrc: "/es_woman.mp3",
-                      },
-                      {
-                        challengeId: challenge.id,
-                        correct: false,
-                        text: "el hombre",
-                        imageSrc: "/man.svg",
-                        audioSrc: "/es_man.mp3",
+                        text: "a",
                       },
                       {
                         challengeId: challenge.id,
                         correct: true,
-                        text: "el chico",
-                        imageSrc: "/boy.svg",
-                        audioSrc: "/es_boy.mp3",
+                        text: "an",
                       },
                     ]);
                   }
                 }
               }
+
               if (lesson.order === 3) {
                 const challenges = await db
                   .insert(schema.challenges)
                   .values([
                     {
                       lessonId: lesson.id,
-                      type: "SELECT",
-                      question: '聊天3-1',
+                      type: "ASSIST",
+                      question: 'Hello Tom! Welcome to my _ house',
                       order: 1,
                     },
                     {
                       lessonId: lesson.id,
                       type: "SELECT",
-                      question: '聊天3-2',
+                      question: 'Do you like _ ?',
                       order: 2,
                     },
                     {
                       lessonId: lesson.id,
-                      type: "SELECT",
-                      question: '聊天3-3?',
+                      type: "ASSIST",
+                      question: 'That boy is my _ ',
                       order: 3,
                     },
                   ])
@@ -313,23 +266,17 @@ const main = async () => {
                       {
                         challengeId: challenge.id,
                         correct: true,
-                        text: "el hombre",
-                        imageSrc: "/man.svg",
-                        audioSrc: "/es_man.mp3",
+                        text: "new",
                       },
                       {
                         challengeId: challenge.id,
                         correct: false,
-                        text: "la mujer",
-                        imageSrc: "/woman.svg",
-                        audioSrc: "/es_woman.mp3",
+                        text: "easy",
                       },
                       {
                         challengeId: challenge.id,
                         correct: false,
-                        text: "el chico",
-                        imageSrc: "/boy.svg",
-                        audioSrc: "/es_boy.mp3",
+                        text: "now",
                       },
                     ]);
                   }
@@ -339,23 +286,14 @@ const main = async () => {
                       {
                         challengeId: challenge.id,
                         correct: true,
-                        text: "la mujer",
-                        imageSrc: "/woman.svg",
-                        audioSrc: "/es_woman.mp3",
+                        text: "Sound: ",
+                        audioSrc: "/source/us/unit_1/pets.mp3",
                       },
                       {
                         challengeId: challenge.id,
                         correct: false,
-                        text: "el chico",
-                        imageSrc: "/boy.svg",
-                        audioSrc: "/es_boy.mp3",
-                      },
-                      {
-                        challengeId: challenge.id,
-                        correct: false,
-                        text: "el hombre",
-                        imageSrc: "/man.svg",
-                        audioSrc: "/es_man.mp3",
+                        text: "Sound: ",
+                        audioSrc: "/source/us/unit_1/pants.mp3",
                       },
                     ]);
                   }
@@ -365,23 +303,17 @@ const main = async () => {
                       {
                         challengeId: challenge.id,
                         correct: false,
-                        text: "la mujer",
-                        imageSrc: "/woman.svg",
-                        audioSrc: "/es_woman.mp3",
-                      },
-                      {
-                        challengeId: challenge.id,
-                        correct: false,
-                        text: "el hombre",
-                        imageSrc: "/man.svg",
-                        audioSrc: "/es_man.mp3",
+                        text: "restaurant",
                       },
                       {
                         challengeId: challenge.id,
                         correct: true,
-                        text: "el chico",
-                        imageSrc: "/boy.svg",
-                        audioSrc: "/es_boy.mp3",
+                        text: "brother",
+                      },
+                      {
+                        challengeId: challenge.id,
+                        correct: false,
+                        text: "exam",
                       },
                     ]);
                   }
@@ -409,19 +341,19 @@ const main = async () => {
                     {
                       lessonId: lesson.id,
                       type: "SELECT",
-                      question: '餐廳1-1',
+                      question: '哪個是餐廳?',
                       order: 1,
                     },
                     {
                       lessonId: lesson.id,
-                      type: "SELECT",
-                      question: '餐廳1-2',
+                      type: "ASSIST",
+                      question: 'Would you like a table ?',
                       order: 2,
                     },
                     {
                       lessonId: lesson.id,
-                      type: "SELECT",
-                      question: '餐廳1-3',
+                      type: "ASSIST",
+                      question: 'We need a __ table, please',
                       order: 3,
                     },
                   ])
@@ -434,23 +366,20 @@ const main = async () => {
                       {
                         challengeId: challenge.id,
                         correct: true,
-                        text: "el hombre",
-                        imageSrc: "/man.svg",
-                        audioSrc: "/es_man.mp3",
+                        text: "restaurant",
+                        imageSrc: "/source/us/unit_2/restaurant.svg",
                       },
                       {
                         challengeId: challenge.id,
                         correct: false,
-                        text: "la mujer",
-                        imageSrc: "/woman.svg",
-                        audioSrc: "/es_woman.mp3",
+                        text: "house",
+                        imageSrc: "/source/us/unit_2/house.svg",
                       },
                       {
                         challengeId: challenge.id,
                         correct: false,
-                        text: "el chico",
-                        imageSrc: "/boy.svg",
-                        audioSrc: "/es_boy.mp3",
+                        text: "skyscraper",
+                        imageSrc: "/source/us/unit_2/skyscraper.svg",
                       },
                     ]);
                   }
@@ -460,23 +389,14 @@ const main = async () => {
                       {
                         challengeId: challenge.id,
                         correct: true,
-                        text: "la mujer",
-                        imageSrc: "/woman.svg",
-                        audioSrc: "/es_woman.mp3",
+                        text: "Yes, a table for one, please",
+                        audioSrc: "/source/us/unit_2/a_table_for_one.mp3",
                       },
                       {
                         challengeId: challenge.id,
                         correct: false,
-                        text: "el chico",
-                        imageSrc: "/boy.svg",
-                        audioSrc: "/es_boy.mp3",
-                      },
-                      {
-                        challengeId: challenge.id,
-                        correct: false,
-                        text: "el hombre",
-                        imageSrc: "/man.svg",
-                        audioSrc: "/es_man.mp3",
+                        text: "We need four shirts",
+                        audioSrc: "/source/us/unit_2/we_need_four_shirts.mp3",
                       },
                     ]);
                   }
@@ -486,23 +406,14 @@ const main = async () => {
                       {
                         challengeId: challenge.id,
                         correct: false,
-                        text: "la mujer",
-                        imageSrc: "/woman.svg",
-                        audioSrc: "/es_woman.mp3",
-                      },
-                      {
-                        challengeId: challenge.id,
-                        correct: false,
-                        text: "el hombre",
-                        imageSrc: "/man.svg",
-                        audioSrc: "/es_man.mp3",
+                        text: "sound: ",
+                        audioSrc: "/source/us/unit_2/bad.mp3",
                       },
                       {
                         challengeId: challenge.id,
                         correct: true,
-                        text: "el chico",
-                        imageSrc: "/boy.svg",
-                        audioSrc: "/es_boy.mp3",
+                        text: "sound: ",
+                        audioSrc: "/source/us/unit_2/big.mp3",
                       },
                     ]);
                   }
@@ -514,20 +425,20 @@ const main = async () => {
                   .values([
                     {
                       lessonId: lesson.id,
-                      type: "SELECT",
-                      question: '點餐2-1',
+                      type: "ASSIST",
+                      question: '哪個是牛奶?',
                       order: 1,
                     },
                     {
                       lessonId: lesson.id,
-                      type: "SELECT",
-                      question: '點餐2-2',
+                      type: "ASSIST",
+                      question: '填空 I would like two _ ?',
                       order: 2,
                     },
                     {
                       lessonId: lesson.id,
-                      type: "SELECT",
-                      question: '點餐2-3?',
+                      type: "ASSIST",
+                      question: '填空 Two _ of coffee',
                       order: 3,
                     },
                   ])
@@ -539,24 +450,18 @@ const main = async () => {
                     await db.insert(schema.challengeOptions).values([
                       {
                         challengeId: challenge.id,
+                        correct: false,
+                        text: "water",
+                      },
+                      {
+                        challengeId: challenge.id,
+                        correct: false,
+                        text: "menu",
+                      },
+                      {
+                        challengeId: challenge.id,
                         correct: true,
-                        text: "el hombre",
-                        imageSrc: "/man.svg",
-                        audioSrc: "/es_man.mp3",
-                      },
-                      {
-                        challengeId: challenge.id,
-                        correct: false,
-                        text: "la mujer",
-                        imageSrc: "/woman.svg",
-                        audioSrc: "/es_woman.mp3",
-                      },
-                      {
-                        challengeId: challenge.id,
-                        correct: false,
-                        text: "el chico",
-                        imageSrc: "/boy.svg",
-                        audioSrc: "/es_boy.mp3",
+                        text: "milk",
                       },
                     ]);
                   }
@@ -566,23 +471,17 @@ const main = async () => {
                       {
                         challengeId: challenge.id,
                         correct: true,
-                        text: "la mujer",
-                        imageSrc: "/woman.svg",
-                        audioSrc: "/es_woman.mp3",
+                        text: "pizzas",
                       },
                       {
                         challengeId: challenge.id,
                         correct: false,
-                        text: "el chico",
-                        imageSrc: "/boy.svg",
-                        audioSrc: "/es_boy.mp3",
+                        text: "house",
                       },
                       {
                         challengeId: challenge.id,
                         correct: false,
-                        text: "el hombre",
-                        imageSrc: "/man.svg",
-                        audioSrc: "/es_man.mp3",
+                        text: "water",
                       },
                     ]);
                   }
@@ -592,23 +491,17 @@ const main = async () => {
                       {
                         challengeId: challenge.id,
                         correct: false,
-                        text: "la mujer",
-                        imageSrc: "/woman.svg",
-                        audioSrc: "/es_woman.mp3",
+                        text: "cup",
                       },
                       {
                         challengeId: challenge.id,
                         correct: false,
-                        text: "el hombre",
-                        imageSrc: "/man.svg",
-                        audioSrc: "/es_man.mp3",
+                        text: "bootle",
                       },
                       {
                         challengeId: challenge.id,
                         correct: true,
-                        text: "el chico",
-                        imageSrc: "/boy.svg",
-                        audioSrc: "/es_boy.mp3",
+                        text: "cups",
                       },
                     ]);
                   }
@@ -620,20 +513,20 @@ const main = async () => {
                   .values([
                     {
                       lessonId: lesson.id,
-                      type: "SELECT",
-                      question: '付款3-1',
+                      type: "ASSIST",
+                      question: '結帳, 謝謝',
                       order: 1,
                     },
                     {
                       lessonId: lesson.id,
-                      type: "SELECT",
-                      question: '付款3-2',
+                      type: "ASSIST",
+                      question: '說話的人表示什麼, I like this new restaurant! This chicken sandwich is good.',
                       order: 2,
                     },
                     {
                       lessonId: lesson.id,
-                      type: "SELECT",
-                      question: '付款3-3?',
+                      type: "ASSIST",
+                      question: '填空, _ like a pizza. _ like a pizza, Ben?',
                       order: 3,
                     },
                   ])
@@ -646,23 +539,17 @@ const main = async () => {
                       {
                         challengeId: challenge.id,
                         correct: true,
-                        text: "el hombre",
-                        imageSrc: "/man.svg",
-                        audioSrc: "/es_man.mp3",
+                        text: "Check, please",
                       },
                       {
                         challengeId: challenge.id,
                         correct: false,
-                        text: "la mujer",
-                        imageSrc: "/woman.svg",
-                        audioSrc: "/es_woman.mp3",
+                        text: "Thank you, goodbye",
                       },
                       {
                         challengeId: challenge.id,
                         correct: false,
-                        text: "el chico",
-                        imageSrc: "/boy.svg",
-                        audioSrc: "/es_boy.mp3",
+                        text: "I want to order",
                       },
                     ]);
                   }
@@ -671,24 +558,18 @@ const main = async () => {
                     await db.insert(schema.challengeOptions).values([
                       {
                         challengeId: challenge.id,
+                        correct: false,
+                        text: "不喜歡這個餐廳",
+                      },
+                      {
+                        challengeId: challenge.id,
+                        correct: false,
+                        text: "不喜歡雞肉三明治",
+                      },
+                      {
+                        challengeId: challenge.id,
                         correct: true,
-                        text: "la mujer",
-                        imageSrc: "/woman.svg",
-                        audioSrc: "/es_woman.mp3",
-                      },
-                      {
-                        challengeId: challenge.id,
-                        correct: false,
-                        text: "el chico",
-                        imageSrc: "/boy.svg",
-                        audioSrc: "/es_boy.mp3",
-                      },
-                      {
-                        challengeId: challenge.id,
-                        correct: false,
-                        text: "el hombre",
-                        imageSrc: "/man.svg",
-                        audioSrc: "/es_man.mp3",
+                        text: "喜歡這個餐廳",
                       },
                     ]);
                   }
@@ -698,23 +579,17 @@ const main = async () => {
                       {
                         challengeId: challenge.id,
                         correct: false,
-                        text: "la mujer",
-                        imageSrc: "/woman.svg",
-                        audioSrc: "/es_woman.mp3",
+                        text: "I am / Your are",
                       },
                       {
                         challengeId: challenge.id,
                         correct: false,
-                        text: "el hombre",
-                        imageSrc: "/man.svg",
-                        audioSrc: "/es_man.mp3",
+                        text: "You / I would",
                       },
                       {
                         challengeId: challenge.id,
                         correct: true,
-                        text: "el chico",
-                        imageSrc: "/boy.svg",
-                        audioSrc: "/es_boy.mp3",
+                        text: "I would / Would you",
                       },
                     ]);
                   }
