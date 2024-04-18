@@ -26,6 +26,8 @@ export const createStripeUrl = async () => {
 
     return { data: stripeSession.url };
   }
+  
+  const month_cost = 150 //150 NTD
 
   const stripeSession = await stripe.checkout.sessions.create({
     mode: "subscription",
@@ -40,7 +42,7 @@ export const createStripeUrl = async () => {
             name: "Duo Pro",
             description: "Unlimited Hearts",
           },
-          unit_amount: 168000, //1680 NTD
+          unit_amount: month_cost * 100, 
           recurring: {
             interval: "month",
           },

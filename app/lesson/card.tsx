@@ -67,8 +67,18 @@ export const Card = ({
       <div className={cn(
         "flex items-center justify-between",
         type === "ASSIST" && "flex-row-reverse",
+        type === "VOICE" && "flex-row-reverse",
       )}>
-        {type === "ASSIST" && <div />}
+        {type === "ASSIST" && audioSrc ?  
+          <Image
+            src='/voice_wave.svg'
+            alt="voice_image"
+            width={100}
+            height={20}
+            className="w-full h-5"
+            /> 
+          : <div />
+        }
 
         <p className={cn(
           "text-neutral-600 text-sm lg:text-base",

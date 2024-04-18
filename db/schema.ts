@@ -67,7 +67,7 @@ export const lessonsRelations = relations(lessons, ({ one, many }) => ({
 }));
 
 //TODO: pgEnum 列舉型 (enum)函式資料型態: 定義一個由一組固定值組成的集合， type 的列舉型，指定了兩個可能的值：SELECT 和 ASSIST。
-export const challengesEnum = pgEnum("type", ["SELECT", "ASSIST"]);
+export const challengesEnum = pgEnum("type", ["SELECT", "ASSIST", "VOICE"]);
 
 export const challenges = pgTable("challenges", {
   id: serial("id").primaryKey(),
@@ -75,6 +75,8 @@ export const challenges = pgTable("challenges", {
   type: challengesEnum("type").notNull(),
   question: text("question").notNull(),
   order: integer("order").notNull(),
+  imageSrc: text("image_src"),
+  audioSrc: text("audio_src"),
 });
 // one 函式: 表示一個挑戰 (challenge) 對應到一個課程 (lesson)
 // many 函式: 表示一個挑戰 (challenge) 對應到很多挑戰選項 (challengeOptions) 和挑戰進度 (challengeProgress)

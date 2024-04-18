@@ -16,6 +16,10 @@ export const ChallengeList = () => {
             {
               id: "ASSIST",
               name: "ASSIST",
+            },
+            {
+              id: "VOICE",
+              name: "VOICE",
             }
           ]}
         />

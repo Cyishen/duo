@@ -15,6 +15,7 @@ import { reduceHearts } from "@/actions/user-progress";
 
 import { Header } from "./header";
 import { QuestionBubble } from "./question-bubble";
+import { QuestionVoiceBox } from "./question-voicebox";
 import { Challenge } from "./challenge";
 import { Footer } from "./footer";
 import { ResultCard } from "./result-card";
@@ -207,8 +208,8 @@ const Quiz = ({
     );
   }
 
-  const title = challenge.type === "ASSIST" 
-  ? "Select the correct meaning"
+  const title = (challenge.type === "ASSIST" || challenge.type === "VOICE")
+  ? "選擇符合的"
   : challenge.question;
 
   return (
@@ -232,6 +233,14 @@ const Quiz = ({
             <div>
               {challenge?.type === "ASSIST" && (
                 <QuestionBubble question={challenge.question} />
+              )}
+
+              {challenge?.type === "VOICE" && (
+                <QuestionVoiceBox 
+                  question={challenge.question} 
+                  audioSrc={challenge.audioSrc}
+                  imageSrc={challenge.imageSrc}
+                />
               )}
 
               <Challenge

@@ -19,6 +19,10 @@ export const ChallengeEdit = () => {
             {
               id: "ASSIST",
               name: "ASSIST",
+            },
+            {
+              id: "VOICE",
+              name: "VOICE",
             }
           ]}
           validate={[required()]} 
