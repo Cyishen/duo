@@ -2,6 +2,7 @@ import { lessons, units } from "@/db/schema"
 
 import { UnitBanner } from "./unit-banner";
 import { LessonButton } from "./lesson-button";
+import Image from "next/image";
 
 type Props = {
   id: number;
@@ -26,6 +27,8 @@ export const Unit = ({
   activeLesson,
   activeLessonPercentage,
 }: Props) => {
+  const allLessonsCompleted = lessons.every(lesson => lesson.completed);
+
   return (
     <>
       <UnitBanner title={title} description={description} />
@@ -47,6 +50,24 @@ export const Unit = ({
             />
           );
         })}
+      </div>
+
+      <div className="flex justify-center mt-6">
+        {allLessonsCompleted ? (
+          <Image 
+            src="/finish_champ.svg" 
+            alt="finish_lesson" 
+            width={100} 
+            height={100} 
+          />
+        ) : (
+          <Image 
+            src="/finish_champ_icon.svg" 
+            alt="finish_lesson" 
+            width={70} 
+            height={70} 
+          />
+        )}
       </div>
     </>
   );
