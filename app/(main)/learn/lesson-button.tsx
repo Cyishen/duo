@@ -41,7 +41,7 @@ export const LessonButton = ({ id, index, totalCount, locked, current, percentag
   const isCompleted = !current && !locked;
 
   const Icon = isCompleted 
-  ? (bookIcon() && cycleIndex === 1 ? bookIcon : Check) 
+  ? (bookIcon() && (cycleIndex === 1 || cycleIndex === 3)? bookIcon : Check) 
   : isLast 
   ? Crown 
   : (cycleIndex === 1 || cycleIndex === 3 )
