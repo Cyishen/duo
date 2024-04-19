@@ -61,12 +61,14 @@ export const Unit = ({
             height={100} 
           />
         ) : (
-          <Image 
-            src="/finish_champ_icon.svg" 
-            alt="finish_lesson" 
-            width={70} 
-            height={70} 
-          />
+          <div className="mb-14">
+            <Image 
+              src="/finish_champ_icon.svg" 
+              alt="finish_lesson" 
+              width={70} 
+              height={70} 
+            />
+          </div>
         )}
       </div>
     </>

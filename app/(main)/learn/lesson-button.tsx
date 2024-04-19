@@ -58,11 +58,6 @@ export const LessonButton = ({ id, index, totalCount, locked, current, percentag
     }
   };
 
-  const unfinishedChallengesAnchor = document.getElementById('unfinished-challenges');
-  if (unfinishedChallengesAnchor) {
-    unfinishedChallengesAnchor.scrollIntoView();
-  }
-
   return (
     <Link 
       href={href}

@@ -157,10 +157,6 @@ const Quiz = ({
     }
   };
 
-  const handleRouterPush = () => {
-    router.push("/learn#unfinished-challenges", { scroll: true });
-  };
-
   if (!challenge) {
     return (
       <>
