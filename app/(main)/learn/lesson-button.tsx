@@ -7,6 +7,7 @@ import "react-circular-progressbar/dist/styles.css";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import bookIcon from "./bookIcon";
 
 type Props = {
   id: number;
@@ -39,7 +40,14 @@ export const LessonButton = ({ id, index, totalCount, locked, current, percentag
   const isLast = index === totalCount;
   const isCompleted = !current && !locked;
 
-  const Icon = isCompleted ? Check : isLast ? Crown : Star;
+  const Icon = isCompleted 
+  ? (bookIcon() && cycleIndex === 1 ? bookIcon : Check) 
+  : isLast 
+  ? Crown 
+  : (cycleIndex === 1 || cycleIndex === 3 )
+  ? bookIcon 
+  : Star;
+
 
   const href = isCompleted ? `/lesson/${id}` : "/lesson";
 
