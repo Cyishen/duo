@@ -60,7 +60,7 @@ const LearnPage = async () => {
         />
 
         {isLessHearts && (
-          <HeartRecover />
+          <HeartRecover hearts={userProgress.hearts}/>
         )}
 
         {!isPro && (
