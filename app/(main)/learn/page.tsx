@@ -11,6 +11,7 @@ import { Unit } from "./unit"
 
 import { getCourseProgress, getLessonPercentage, getUnits, getUserProgress, getUserSubscription } from "@/db/queries"
 import { lessons, units as unitsSchema } from "@/db/schema"
+import { HeartRecover } from "@/components/heart-recover"
 
 
 const LearnPage = async () => {
@@ -45,6 +46,8 @@ const LearnPage = async () => {
 
   const isPro = !!userSubscription?.isActive;
 
+  const isLessHearts = userProgress.hearts < 5
+
   return (
     <div className="flex flex-row-reverse gap-[48px] px-6">
       {/* sticky on desktop */}
@@ -55,6 +58,11 @@ const LearnPage = async () => {
           points={userProgress.points} 
           hasActiveSubscription={isPro} 
         />
+
+        {isLessHearts && (
+          <HeartRecover />
+        )}
+
         {!isPro && (
           <Promo />
         )}

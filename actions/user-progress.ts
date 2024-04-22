@@ -142,3 +142,24 @@ export const refillHearts = async () => {
   revalidatePath("/quests");
   revalidatePath("/leaderboard");
 };
+
+export const recoverHearts = async () => {
+  const currentUserProgress = await getUserProgress();
+
+  if (!currentUserProgress) {
+    throw new Error("User progress not found");
+  }
+
+  if (currentUserProgress.hearts === 5) {
+    throw new Error("Hearts are already full");
+  }
+
+  await db.update(userProgress).set({
+    hearts: Math.min(currentUserProgress.hearts + 1, 5),
+  }).where(eq(userProgress.userId, currentUserProgress.userId));
+
+  revalidatePath("/shop");
+  revalidatePath("/learn");
+  revalidatePath("/quests");
+  revalidatePath("/leaderboard");
+};
